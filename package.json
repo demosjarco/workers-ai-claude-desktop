@@ -1,0 +1,26 @@
+{
+	"type": "module",
+	"scripts": {
+		"fmt": "prettier --check .",
+		"fmt:fix": "prettier --write .",
+		"lint": "eslint **/*.*ts*",
+		"lint:fix": "npm run lint -- --fix",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/demosjarco/workers-ai-claude-desktop.git"
+	},
+	"author": "DemosJarco <1209494+demosjarco@users.noreply.github.com>",
+	"license": "MIT",
+	"private": true,
+	"bugs": {
+		"url": "https://github.com/demosjarco/workers-ai-claude-desktop/issues"
+	},
+	"homepage": "https://github.com/demosjarco/workers-ai-claude-desktop#readme",
+	"prettier": "@demosjarco/prettier-config",
+	"devDependencies": {
+		"@demosjarco/prettier-config": "1.0.2",
+		"prettier": "3.8.4"
+	}
+}
