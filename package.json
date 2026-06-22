@@ -1,0 +1,15 @@
+{
+	"type": "module",
+	"scripts": {},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/demosjarco/workers-ai-claude-desktop.git"
+	},
+	"author": "DemosJarco <1209494+demosjarco@users.noreply.github.com>",
+	"license": "MIT",
+	"private": true,
+	"bugs": {
+		"url": "https://github.com/demosjarco/workers-ai-claude-desktop/issues"
+	},
+	"homepage": "https://github.com/demosjarco/workers-ai-claude-desktop#readme"
+}
