@@ -6,7 +6,7 @@
 	},
 	"js/ts.preferences.importModuleSpecifier": "non-relative",
 	"js/ts.tsdk.path": "./node_modules/typescript/lib",
-	"github-actions.workflows.pinned.workflows": [],
+	"github-actions.workflows.pinned.workflows": [".github/workflows/publish.yml", ".github/workflows/publish-apig.yml"],
 	"github-actions.workflows.pinned.refresh.enabled": true,
 	"yaml.schemas": {
 		"https://json.schemastore.org/dependabot-2.0.json": "${workspaceFolder}/.github/dependabot.yml"
