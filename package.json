@@ -1,6 +1,9 @@
 {
 	"type": "module",
-	"scripts": {},
+	"scripts": {
+		"fmt": "prettier --check .",
+		"fmt:fix": "prettier --write ."
+	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/demosjarco/workers-ai-claude-desktop.git"
@@ -11,5 +14,11 @@
 	"bugs": {
 		"url": "https://github.com/demosjarco/workers-ai-claude-desktop/issues"
 	},
-	"homepage": "https://github.com/demosjarco/workers-ai-claude-desktop#readme"
+	"homepage": "https://github.com/demosjarco/workers-ai-claude-desktop#readme",
+	"prettier": "@demosjarco/prettier-config",
+	"dependencies": {},
+	"devDependencies": {
+		"@demosjarco/prettier-config": "1.0.2",
+		"prettier": "3.8.4"
+	}
 }

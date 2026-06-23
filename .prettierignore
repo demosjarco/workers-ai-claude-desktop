@@ -1,0 +1,3 @@
+dist/llms.txt
+dist/*/llms.txt
+dist/*/*.json
