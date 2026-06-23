@@ -4,7 +4,12 @@
 		"fmt": "prettier --check .",
 		"fmt:fix": "prettier --write .",
 		"lint": "eslint **/*.*ts*",
-		"lint:fix": "npm run lint -- --fix"
+		"lint:fix": "npm run lint -- --fix",
+		"build:types:cf": "wrangler types",
+		"postbuild:types:cf": "prettier --write worker-configuration.d.ts",
+		"build:static": "tsx staticApi.ts",
+		"start": "wrangler dev",
+		"publish:static": "tsx apiGateway.ts"
 	},
 	"repository": {
 		"type": "git",
