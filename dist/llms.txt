@@ -1,0 +1,11 @@
+# Claude Desktop 3P gateway for Workers Ai Models
+
+This service provides multiple API versions. Each version has its own detailed documentation:
+
+## API V1
+
+Full API documentation for v1: [v1/llms.txt](/v1/llms.txt)
+
+---
+
+Generated automatically from OpenAPI specifications.

@@ -1,0 +1,10 @@
+# Workers AI Claude Desktop
+
+- **OpenAPI Version:** `3.1.0`
+- **API Version:** `v1`
+
+Claude Desktop 3P gateway for Workers Ai Models
+
+## Servers
+
+- **URL:** `/v1`

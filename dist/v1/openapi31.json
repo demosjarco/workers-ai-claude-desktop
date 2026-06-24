@@ -1,0 +1,1 @@
+{"openapi":"3.1.0","info":{"title":"Workers AI Claude Desktop","description":"Claude Desktop 3P gateway for Workers Ai Models","contact":{"url":"https://github.com/demosjarco/workers-ai-claude-desktop/issues"},"version":"v1"},"servers":[{"url":"/v1"}],"components":{"schemas":{},"parameters":{}},"paths":{},"webhooks":{}}

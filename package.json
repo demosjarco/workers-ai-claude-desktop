@@ -23,11 +23,16 @@
 	},
 	"homepage": "https://github.com/demosjarco/workers-ai-claude-desktop#readme",
 	"prettier": "@demosjarco/prettier-config",
-	"dependencies": {},
+	"dependencies": {
+		"@hono/zod-openapi": "1.4.0",
+		"hono": "4.12.27"
+	},
 	"devDependencies": {
 		"@demosjarco/prettier-config": "1.0.2",
 		"@eslint/js": "10.0.1",
 		"@microsoft/eslint-formatter-sarif": "3.1.0",
+		"@scalar/hono-api-reference": "0.11.5",
+		"@scalar/openapi-to-markdown": "0.5.27",
 		"@types/node": "26.0.0",
 		"cloudflare": "6.4.0",
 		"eslint": "10.5.0",
