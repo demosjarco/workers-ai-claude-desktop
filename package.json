@@ -4,7 +4,12 @@
 		"fmt": "prettier --check .",
 		"fmt:fix": "prettier --write .",
 		"lint": "eslint **/*.*ts*",
-		"lint:fix": "npm run lint -- --fix"
+		"lint:fix": "npm run lint -- --fix",
+		"build:types:cf": "wrangler types",
+		"postbuild:types:cf": "prettier --write worker-configuration.d.ts",
+		"build:static": "tsx staticApi.ts",
+		"start": "wrangler dev",
+		"publish:static": "tsx apiGateway.ts"
 	},
 	"repository": {
 		"type": "git",
@@ -24,10 +29,13 @@
 		"@eslint/js": "10.0.1",
 		"@microsoft/eslint-formatter-sarif": "3.1.0",
 		"@types/node": "26.0.0",
+		"cloudflare": "6.4.0",
 		"eslint": "10.5.0",
 		"eslint-config-prettier": "10.1.8",
 		"prettier": "3.8.4",
+		"tsx": "4.22.4",
 		"typescript": "6.0.3",
-		"typescript-eslint": "8.62.0"
+		"typescript-eslint": "8.62.0",
+		"wrangler": "4.104.0"
 	}
 }
