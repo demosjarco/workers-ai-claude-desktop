@@ -8,3 +8,428 @@ Claude Desktop 3P gateway for Workers Ai Models
 ## Servers
 
 - **URL:** `/v1`
+
+## Operations
+
+### GET /models
+
+- **Method:** `GET`
+- **Path:** `/models`
+
+#### Parameters
+
+##### `after_id`
+
+- **In:** `query`
+
+ID of the object to use as a cursor for pagination. When provided, returns the page of results immediately after this object.
+
+`string` — ID of the object to use as a cursor for pagination. When provided, returns the page of results immediately after this object.
+
+##### `before_id`
+
+- **In:** `query`
+
+ID of the object to use as a cursor for pagination. When provided, returns the page of results immediately before this object.
+
+`string` — ID of the object to use as a cursor for pagination. When provided, returns the page of results immediately before this object.
+
+##### `limit`
+
+- **In:** `query`
+
+Number of items to return per page.
+
+`integer`, default: `20` — Number of items to return per page.
+
+#### Responses
+
+##### Status: 200 The Models API response can be used to determine which models are available for use in the API. More recently released models are listed first.
+
+###### Content-Type: application/json
+
+- **`data` (required)**
+
+  `array`
+
+  **Items:**
+
+  - **`capabilities` (required)**
+
+    `object`
+
+    - **`batch` (required)**
+
+      `object`
+
+      - **`supported` (required)**
+
+        `boolean` — Whether this capability is supported by the model.
+
+    - **`citations` (required)**
+
+      `object`
+
+      - **`supported` (required)**
+
+        `boolean` — Whether this capability is supported by the model.
+
+    - **`code_execution` (required)**
+
+      `object`
+
+      - **`supported` (required)**
+
+        `boolean` — Whether this capability is supported by the model.
+
+    - **`context_management` (required)**
+
+      `object`
+
+    - **`effort` (required)**
+
+      `object`
+
+    - **`image_input` (required)**
+
+      `object`
+
+      - **`supported` (required)**
+
+        `boolean` — Whether this capability is supported by the model.
+
+    - **`pdf_input` (required)**
+
+      `object`
+
+      - **`supported` (required)**
+
+        `boolean` — Whether this capability is supported by the model.
+
+    - **`structured_outputs` (required)**
+
+      `object`
+
+      - **`supported` (required)**
+
+        `boolean` — Whether this capability is supported by the model.
+
+    - **`thinking` (required)**
+
+      `object`
+
+  - **`created_at` (required)**
+
+    `string`, format: `date-time` — RFC 3339 datetime string representing the time at which the model was released. May be set to an epoch value if the release date is unknown.
+
+  - **`display_name` (required)**
+
+    `string` — A human-readable name for the model.
+
+  - **`id` (required)**
+
+    `string` — Unique model identifier.
+
+  - **`max_input_tokens` (required)**
+
+    `integer | null` — Maximum input context window size in tokens for this model.
+
+  - **`max_tokens` (required)**
+
+    `integer | null` — Maximum value for the \`max\_tokens\` parameter when using this model.
+
+  - **`type` (required)**
+
+    `string`, possible values: `"model"` — For Models, this is always "model".
+
+- **`first_id` (required)**
+
+  `string` — First ID in the \`data\` list. Can be used as the \`before\_id\` for the previous page.
+
+- **`has_more` (required)**
+
+  `boolean` — Indicates if there are more results in the requested page direction.
+
+- **`last_id` (required)**
+
+  `string` — Last ID in the \`data\` list. Can be used as the \`after\_id\` for the next page.
+
+**Example:**
+
+```json
+{
+  "data": [
+    {
+      "type": "model",
+      "id": "",
+      "display_name": "",
+      "created_at": "",
+      "max_input_tokens": null,
+      "max_tokens": null,
+      "capabilities": null
+    }
+  ],
+  "first_id": "",
+  "has_more": true,
+  "last_id": ""
+}
+```
+
+## Schemas
+
+### ModelInfo
+
+- **Type:**`object`
+
+* **`capabilities` (required)**
+
+  `object`
+
+  - **`batch` (required)**
+
+    `object`
+
+    - **`supported` (required)**
+
+      `boolean` — Whether this capability is supported by the model.
+
+  - **`citations` (required)**
+
+    `object`
+
+    - **`supported` (required)**
+
+      `boolean` — Whether this capability is supported by the model.
+
+  - **`code_execution` (required)**
+
+    `object`
+
+    - **`supported` (required)**
+
+      `boolean` — Whether this capability is supported by the model.
+
+  - **`context_management` (required)**
+
+    `object`
+
+  - **`effort` (required)**
+
+    `object`
+
+  - **`image_input` (required)**
+
+    `object`
+
+    - **`supported` (required)**
+
+      `boolean` — Whether this capability is supported by the model.
+
+  - **`pdf_input` (required)**
+
+    `object`
+
+    - **`supported` (required)**
+
+      `boolean` — Whether this capability is supported by the model.
+
+  - **`structured_outputs` (required)**
+
+    `object`
+
+    - **`supported` (required)**
+
+      `boolean` — Whether this capability is supported by the model.
+
+  - **`thinking` (required)**
+
+    `object`
+
+* **`created_at` (required)**
+
+  `string`, format: `date-time` — RFC 3339 datetime string representing the time at which the model was released. May be set to an epoch value if the release date is unknown.
+
+* **`display_name` (required)**
+
+  `string` — A human-readable name for the model.
+
+* **`id` (required)**
+
+  `string` — Unique model identifier.
+
+* **`max_input_tokens` (required)**
+
+  `integer | null` — Maximum input context window size in tokens for this model.
+
+* **`max_tokens` (required)**
+
+  `integer | null` — Maximum value for the \`max\_tokens\` parameter when using this model.
+
+* **`type` (required)**
+
+  `string`, possible values: `"model"` — For Models, this is always "model".
+
+**Example:**
+
+```json
+{
+  "type": "model",
+  "id": "",
+  "display_name": "",
+  "created_at": "",
+  "max_input_tokens": null,
+  "max_tokens": null,
+  "capabilities": {
+    "batch": null,
+    "citations": null,
+    "code_execution": null,
+    "context_management": null,
+    "effort": null,
+    "image_input": null,
+    "pdf_input": null,
+    "structured_outputs": null,
+    "thinking": null
+  }
+}
+```
+
+### ModelCapabilities
+
+- **Type:**`object`
+
+* **`batch` (required)**
+
+  `object`
+
+  - **`supported` (required)**
+
+    `boolean` — Whether this capability is supported by the model.
+
+* **`citations` (required)**
+
+  `object`
+
+  - **`supported` (required)**
+
+    `boolean` — Whether this capability is supported by the model.
+
+* **`code_execution` (required)**
+
+  `object`
+
+  - **`supported` (required)**
+
+    `boolean` — Whether this capability is supported by the model.
+
+* **`context_management` (required)**
+
+  `object`
+
+* **`effort` (required)**
+
+  `object`
+
+* **`image_input` (required)**
+
+  `object`
+
+  - **`supported` (required)**
+
+    `boolean` — Whether this capability is supported by the model.
+
+* **`pdf_input` (required)**
+
+  `object`
+
+  - **`supported` (required)**
+
+    `boolean` — Whether this capability is supported by the model.
+
+* **`structured_outputs` (required)**
+
+  `object`
+
+  - **`supported` (required)**
+
+    `boolean` — Whether this capability is supported by the model.
+
+* **`thinking` (required)**
+
+  `object`
+
+**Example:**
+
+```json
+{
+  "batch": {
+    "supported": true
+  },
+  "citations": {
+    "supported": true
+  },
+  "code_execution": {
+    "supported": true
+  },
+  "context_management": {
+    "clear_thinking_20251015": null,
+    "clear_tool_uses_20250919": null,
+    "compact_20260112": null
+  },
+  "effort": {
+    "low": null,
+    "medium": null,
+    "high": null,
+    "xhigh": null,
+    "max": null
+  },
+  "image_input": {
+    "supported": true
+  },
+  "pdf_input": {
+    "supported": true
+  },
+  "structured_outputs": {
+    "supported": true
+  },
+  "thinking": {
+    "types": {
+      "adaptive": null,
+      "enabled": null
+    }
+  }
+}
+```
+
+### CapabilitySupport
+
+- **Type:**`object`
+
+* **`supported` (required)**
+
+  `boolean` — Whether this capability is supported by the model.
+
+**Example:**
+
+```json
+{
+  "supported": true
+}
+```
+
+### ContextManagementCapability
+
+- **Type:**
+
+**Example:**
+
+### EffortCapability
+
+- **Type:**
+
+**Example:**
+
+### ThinkingCapability
+
+- **Type:**
+
+**Example:**

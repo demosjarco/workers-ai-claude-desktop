@@ -1,6 +1,7 @@
 import { OpenAPIHono } from '@hono/zod-openapi';
 import type { oas31 } from 'openapi3-ts';
 import type { ContextVariables, EnvVars } from '~/types.js';
+import models from '~/v1/models.js';
 
 const app = new OpenAPIHono<{ Bindings: EnvVars; Variables: ContextVariables }>();
 
@@ -58,5 +59,7 @@ app.doc('/generate/v1.waicd.cf-apig.openapi', (c) => ({
 		},
 	],
 }));
+
+app.route('/models', models);
 
 export default app;
