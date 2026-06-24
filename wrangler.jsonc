@@ -12,8 +12,9 @@
 	"upload_source_maps": true,
 	"observability": { "logs": { "enabled": true }, "traces": { "enabled": true } },
 	"limits": { "cpu_ms": 30000, "subrequests": 10000000 },
-	"vars": {},
-	"secrets": { "required": [] },
+	"vars": {
+		"DUMMY_SECRET": "really anthropic? wtf..."
+	},
 	// Bindings
 	"ai": { "binding": "AI", "remote": true },
 	"assets": {
