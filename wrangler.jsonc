@@ -13,7 +13,8 @@
 	"observability": { "logs": { "enabled": true }, "traces": { "enabled": true } },
 	"limits": { "cpu_ms": 30000, "subrequests": 10000000 },
 	"vars": {
-		"DUMMY_SECRET": "really anthropic? wtf..."
+		"DUMMY_SECRET": "really anthropic? wtf...",
+		"GATEWAY": "claude-desktop"
 	},
 	// Bindings
 	"ai": { "binding": "AI", "remote": true },
