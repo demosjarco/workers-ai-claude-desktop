@@ -34,7 +34,7 @@
 		"@microsoft/eslint-formatter-sarif": "3.1.0",
 		"@scalar/hono-api-reference": "0.11.5",
 		"@scalar/openapi-to-markdown": "0.5.27",
-		"@types/node": "26.0.0",
+		"@types/node": "26.0.1",
 		"cloudflare": "6.4.0",
 		"eslint": "10.5.0",
 		"eslint-config-prettier": "10.1.8",
