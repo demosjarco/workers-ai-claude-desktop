@@ -28,6 +28,7 @@ app.doc31('/generate/openapi31', (c) => ({
 				.join('/'),
 		},
 	],
+	security: [{ cfAccess: [] }],
 }));
 app.doc('/generate/openapi', (c) => ({
 	openapi: '3.0.0',
@@ -45,6 +46,7 @@ app.doc('/generate/openapi', (c) => ({
 				.join('/'),
 		},
 	],
+	security: [{ cfAccess: [] }],
 }));
 app.doc('/generate/v1.waicd.cf-apig.openapi', (c) => ({
 	openapi: '3.0.0',
@@ -59,7 +61,13 @@ app.doc('/generate/v1.waicd.cf-apig.openapi', (c) => ({
 			url: 'https://waicd.demosjarco.dev',
 		},
 	],
+	security: [{ cfAccess: [] }],
 }));
+
+app.openAPIRegistry.registerComponent('securitySchemes', 'cfAccess', {
+	type: 'openIdConnect',
+	openIdConnectUrl: 'https://demosjarco.cloudflareaccess.com/.well-known/openid-configuration',
+});
 
 app.route('/messages', messages);
 app.route('/models', models);

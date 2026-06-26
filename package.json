@@ -25,7 +25,8 @@
 	"prettier": "@demosjarco/prettier-config",
 	"dependencies": {
 		"@hono/zod-openapi": "1.4.0",
-		"hono": "4.12.27"
+		"hono": "4.12.27",
+		"jose": "6.2.3"
 	},
 	"devDependencies": {
 		"@demosjarco/prettier-config": "1.0.2",

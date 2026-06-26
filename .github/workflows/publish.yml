@@ -63,5 +63,9 @@ jobs:
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
           vars: |
             GIT_HASH
+            ZT_ISSUER
+            ZT_CLIENT_ID
         env:
           GIT_HASH: ${{ github.sha }}
+          ZT_ISSUER: ${{ secrets.ZT_ISSUER }}
+          ZT_CLIENT_ID: ${{ secrets.ZT_CLIENT_ID }}
