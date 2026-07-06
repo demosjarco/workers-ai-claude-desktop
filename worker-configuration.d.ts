@@ -108,7 +108,7 @@ declare abstract class WorkerGlobalScope extends EventTarget<WorkerGlobalScopeEv
  * [MDN Reference](https://developer.mozilla.org/docs/Web/API/console)
  */
 interface Console {
-	'assert'(condition?: boolean, ...data: any[]): void;
+	assert(condition?: boolean, ...data: any[]): void;
 	/**
 	 * The **`console.clear()`** static method clears the console if possible.
 	 *
@@ -11599,7 +11599,8 @@ interface RequestInitCfPropertiesImageDraw extends BasicImageTransformations {
 	/**
 	 * How to combine the foreground and backdrop pixels to create the result
 	 */
-	composite?: /** Foreground drawn on top of backdrop (default) */
+	composite?:
+		/** Foreground drawn on top of backdrop (default) */
 		| 'over'
 		/** Foreground shown only where backdrop is opaque */
 		| 'in'
